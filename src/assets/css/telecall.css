@@ -1,0 +1,37 @@
+.background {
+
+    background-repeat: no-repeat;
+    background-size: 105%;
+      
+}
+.navimg {
+    margin-left: 20px;
+    width: 150px
+}
+
+.navlinks {
+    justify-content: end;
+    margin: 15px;
+}
+
+.loginTitle {
+    width: 150px;
+    height: 35px;
+    margin-left: 30%;
+    margin-right: 30%;
+
+}
+
+.formItem {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.formsubmit  {
+    justify-content: center;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
