@@ -20,6 +20,7 @@ while ($row = mysqli_fetch_array($result)) {
     
 }
 
+
 header('Content-Description: File Transfer');
 header('Content-Type: application/octet-stream');
 header('Content-Disposition: attachment; filename="'.$filename.'"');
