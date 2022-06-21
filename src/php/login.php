@@ -3,6 +3,7 @@ session_start();
 include('base.php');
 $_SESSION['isValidated'] = '';
 ?>
+<!-- Página inicial  -->
 <body background="../assets/img/telecall-background.jpg">
     <div class="container" style="width: 30%">
         <div class="card" style="margin-top: 20%;">

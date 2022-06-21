@@ -16,7 +16,7 @@ include('connectionDb.php');
 <form id="regForm" method="POST">
 <h1>Cadastro:</h1>
 
-<!-- One "tab" for each step in the form: -->
+<!-- Uma "guia" para cada etapa do formulário: -->
 <div class="tab">Informações Pessoais:
      <p><input name="firstname" id="firstname" placeholder="Nome" oninput="this.className = ''"></p>
      <p><input name="lastname" id="lastname" placeholder="Sobrenome" oninput="this.className = ''"></p>
@@ -56,7 +56,7 @@ include('connectionDb.php');
   </div>
 </div>
 
-<!-- Circles which indicates the steps of the form: -->
+<!-- Círculos que indicam as etapas do formulário: Páginas -->
 <div style="text-align:center;margin-top:40px;">
   <span class="step"></span>
   <span class="step"></span>
@@ -96,14 +96,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 <link rel="stylesheet" href="assets/css/form.css">
 <script>
-     var currentTab = 0; // Current tab is set to be the first tab (0)
-     showTab(currentTab); // Display the current tab
+     var currentTab = 0; // A guia atual esta definida para ser a primeira guia (0)
+     showTab(currentTab); // Exibir a guia atual
 
      function showTab(n) {
-     // This function will display the specified tab of the form ...
+     // Esta função irá mostrar a aba especificada do formulário ...
      var x = document.getElementsByClassName("tab");
      x[n].style.display = "block";
-     // ... and fix the Previous/Next buttons:
+     // ... Botões de Anterior/Próximo:
      if (n == 0) {
      document.getElementById("prevBtn").style.display = "none";
      } else {
@@ -114,57 +114,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      } else {
      document.getElementById("nextBtn").innerHTML = "Próximo";
      }
-     // ... and run a function that displays the correct step indicator:
+     // ... e execute uma função que exibe o indicador de etapa correto:
      fixStepIndicator(n)
      }
 
      function nextPrev(n) {
-     // This function will figure out which tab to display
+     // Esta função irá descobrir qual guia exibir
      var x = document.getElementsByClassName("tab");
-     // Exit the function if any field in the current tab is invalid:
+     // Saia da função se alguma campo na guia atual for invalido
      if (n == 1 && !validateForm()) return false;
-     // Hide the current tab:
+     // Ocultar a guia atual:
      x[currentTab].style.display = "none";
-     // Increase or decrease the current tab by 1:
+     // Aumente ou diminua a guia atual em 1
      currentTab = currentTab + n;
-     // if you have reached the end of the form... :
+     // Se você chegou ao final do formulário.. :
      if (currentTab >= x.length) {
      document.getElementById("regForm").submit();
      return false;
      }
-     // Otherwise, display the correct tab:
+     // Caso contrário, exiba a guia correta:
      showTab(currentTab);
      }
 
      function validateForm() {
-     // This function deals with validation of the form fields
+     // Esta função trata da validação dos campos do formulário
      var x, y, i, valid = true;
      x = document.getElementsByClassName("tab");
      y = x[currentTab].getElementsByTagName("input");
-     // A loop that checks every input field in the current tab:
+     // Um loop que verifica todos os campos de ebtrada na guia atual:
      for (i = 0; i < y.length; i++) {
-     // If a field is empty...
+     // Se um campo estiver vazio....
      if (y[i].value == "") {
-          // add an "invalid" class to the field:
+          // Adicione uma classe " invalida" ao campo:
           y[i].className += " invalid";
-          // and set the current valid status to false:
+          // e defina o status válido atual como false:
           valid = false;
      }
      }
-     // If the valid status is true, mark the step as finished and valid:
+     // Se o status válido for verdadeiro, marque a etapa como concluída e válida:
      if (valid) {
      document.getElementsByClassName("step")[currentTab].className += " finish";
      }
-     return valid; // return the valid status
+     return valid; // retornar ao status válido
      }
 
      function fixStepIndicator(n) {
-     // This function removes the "active" class of all steps...
+     // Esta função remove a classe "ativa de todas as etapas..
      var i, x = document.getElementsByClassName("step");
      for (i = 0; i < x.length; i++) {
      x[i].className = x[i].className.replace(" active", "");
      }
-     //... and adds the "active" class to the current step:
+     //... adiciona a classe "active" a etapa atual:
      x[n].className += " active";
      }
 </script>
@@ -173,8 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      /*
           * Para efeito de demonstração, o JavaScript foi
           * incorporado no arquivo HTML.
-          * O ideal é que você faça em um arquivo ".js" separado. Para mais informações
-          * visite o endereço https://developer.yahoo.com/performance/rules.html#external
+          * O ideal é fazer um arquivo em  ".js" separado. 
           */
      
      // Registra o evento blur do campo "cep", ou seja, a pesquisa será feita

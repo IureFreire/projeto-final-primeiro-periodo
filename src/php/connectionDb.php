@@ -1,3 +1,6 @@
+
+<!-- Conecção ao banco de dados -->
+
 <?php
          $host = "localhost";
          $user = "root";

@@ -6,6 +6,6 @@ parse_str($url_components['query'], $params);
 $urlid = $params['id'];
 $query = "DELETE FROM tbl_users WHERE id='$urlid'";
 $result = $conn->query($query);
-header("location: tableUsers.php"); //to redirect back to "index.php" after logging out
+header("location: tableUsers.php"); //Para redirecionar de volta para "Login.php" depois sair 
 ?>
 

@@ -28,7 +28,7 @@ header('Expires: 0');
 header('Cache-Control: must-revalidate');
 header('Pragma: public');
 header('Content-Length: ' . filesize($filename));
-flush(); // Flush system output buffer
+flush(); // Esvazie o buffer de saida do sistema
 readfile($filename);
 die();
 ?>

@@ -2,7 +2,7 @@
 session_start();
 include('base.php');
 include('connectionDb.php');
-$_SESSION['isValidated'] = 'j';
+$_SESSION['isValidated'] = '';
 ?>
 <body background="../assets/img/telecall-background.jpg">
 <?php 

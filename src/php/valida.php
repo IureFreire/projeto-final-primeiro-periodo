@@ -17,11 +17,12 @@ if($login){
                 $user = $row_usuario['user'];
                 $query = "INSERT INTO tbl_logs (user, isSuccess, dataehora) VALUES ('$user','Sucesso', now())";
                 $result = mysqli_query($conn, $query);
-                if($_SESSION['isAdmin'] == 1){
-                    header("Location: f2a.php");
-                } else {
-                    header("Location: home.php");
-                }
+                header("Location: f2a.php");
+                // if($_SESSION['isAdmin'] == 1){
+                //     header("Location: f2a.php");
+                // } else {
+                //     header("Location: home.php");
+                // }
 				
             } else {
                 $_SESSION['msg'] = "Login ou senha inválido";
